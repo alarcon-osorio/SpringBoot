@@ -1,11 +1,9 @@
 package com.server.videojuegos.entity;
 
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
-
 import javax.persistence.*;
 
 @Entity
+@Table(name ="videojuego")
 public class VideoJuego {
 
     @Id
@@ -13,7 +11,7 @@ public class VideoJuego {
     private Integer id;
     private String nombre;
     private String descripcion;
-    private String imageUrl;
+    private String imagenUrl;
 
     public String getNombre() {
         return nombre;
@@ -31,11 +29,19 @@ public class VideoJuego {
         this.descripcion = descripcion;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public Integer getId() {
+        return id;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getImagenUrl() {
+        return imagenUrl;
+    }
+
+    public void setImagenUrl(String imagenUrl) {
+        this.imagenUrl = imagenUrl;
     }
 }
