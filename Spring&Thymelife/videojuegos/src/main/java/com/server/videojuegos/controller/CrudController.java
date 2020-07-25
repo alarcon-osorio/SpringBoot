@@ -31,7 +31,6 @@ public class CrudController {
 
     @PostMapping("/videojuegos/guardar")
     public String guardar(@Valid VideoJuego videoJuego, BindingResult bindingResult, Model model) {
-    //public String guardar(VideoJuego videoJuego) {
         videoJuegoService.guardar(videoJuego);
         System.out.println(videoJuego);
         return "redirect:/";
