@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Spring Boot Projects
 
 _Projects_
@@ -31,4 +32,6 @@ public String guardar(@Valid VideoJuego videoJuego, BindingResult bindingResult,
 }
 
 #
+=======
+>>>>>>> 2f9f06c14ac9f256b195524b58e8c4ce6d261bd7
 
