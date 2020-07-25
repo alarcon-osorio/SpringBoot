@@ -13,6 +13,9 @@ public class VideoJuego {
     private String descripcion;
     private String imagenUrl;
 
+    @ManyToOne //relaciona los dos objetos con la foreign Key
+    private Distribuidor distribuidor;
+
     public String getNombre() {
         return nombre;
     }
@@ -43,5 +46,13 @@ public class VideoJuego {
 
     public void setImagenUrl(String imagenUrl) {
         this.imagenUrl = imagenUrl;
+    }
+
+    public Distribuidor getDistribuidor() {
+        return distribuidor;
+    }
+
+    public void setDistribuidor(Distribuidor distribuidor) {
+        this.distribuidor = distribuidor;
     }
 }
