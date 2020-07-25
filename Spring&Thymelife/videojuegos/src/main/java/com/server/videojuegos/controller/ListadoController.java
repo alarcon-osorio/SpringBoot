@@ -4,7 +4,9 @@ import com.server.videojuegos.entity.VideoJuego;
 import com.server.videojuegos.service.VideoJuegoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -27,6 +29,13 @@ public class ListadoController {
     @RequestMapping("/videoJuegosPorDistribuidor")
     public String listarVideoJuegosPorDistribuidor(int distribuidorId, Model model) {
         List<VideoJuego> juegos = videoJuegoService.buscarPorDistribuidor(distribuidorId);
+        model.addAttribute("videojuegos", juegos);
+        return "listado";
+    }
+
+    @RequestMapping("/buscar")
+    public String buscar(@RequestParam("q") String consulta, Model model) {
+        List<VideoJuego> juegos = videoJuegoService.buscar(consulta);
         model.addAttribute("videojuegos", juegos);
         return "listado";
     }

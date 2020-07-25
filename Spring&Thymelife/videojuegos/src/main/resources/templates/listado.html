@@ -17,6 +17,10 @@
         <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
         Video Juegos
     </a>
+    <form class="form-inline" th:action="@{/buscar}">
+        <input name="q" class="form-control mr-sm-2" type="search" placeholder="Nombre del juego" aria-label="Search" autofocus="autofocus">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
 </nav>
 
 <div class="container mt-4 vj-destacados">
