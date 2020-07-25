@@ -14,7 +14,7 @@ public class VideoJuego {
     private String imagenUrl;
 
     @ManyToOne //relaciona los dos objetos con la foreign Key
-    @JoinColumn(name="distribuidor_id") //Para indicarle manualmente la columna que es la foreign key
+    @JoinColumn(name="distribuidorId") //Para indicarle manualmente la columna que es la foreign key
     private Distribuidor distribuidor;
 
     public String getNombre() {
@@ -55,5 +55,11 @@ public class VideoJuego {
 
     public void setDistribuidor(Distribuidor distribuidor) {
         this.distribuidor = distribuidor;
+    }
+
+    //Sobreescribo toString para saber todos los atributos
+    @Override
+    public String toString() {
+        return "VideoJuego{" + "id=" + id + ", nombre='" + nombre +  ", descripcion='" + descripcion +  ", imagenUrl='" + imagenUrl +  ", distribuidor=" + distribuidor + '}';
     }
 }
