@@ -13,4 +13,7 @@ public interface VideoJuegoRepository extends JpaRepository<VideoJuego, Integer>
     //@Query(value = "select * from videojuego order by nombre, nativeQuery = true")
     List<VideoJuego> buscarTodos();
 
+    @Query("from VideoJuego v where v.distribuidor.id =?1 order by v.nombre") //Consulta con parametro ?1 -> Primer parametro
+    List<VideoJuego> buscarPorDistribuidor(int distribuidorId);
+
 }
