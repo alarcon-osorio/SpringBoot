@@ -16,7 +16,7 @@ public class VideoJuegoService {
     }
 
     public List<VideoJuego> buscarDestacados() {
-        return videoJuegoRepository.findAll();
+        return videoJuegoRepository.buscarTodos();
 
     }
 }

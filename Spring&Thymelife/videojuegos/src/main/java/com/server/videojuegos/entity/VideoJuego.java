@@ -14,6 +14,7 @@ public class VideoJuego {
     private String imagenUrl;
 
     @ManyToOne //relaciona los dos objetos con la foreign Key
+    @JoinColumn(name="distribuidor_id") //Para indicarle manualmente la columna que es la foreign key
     private Distribuidor distribuidor;
 
     public String getNombre() {
