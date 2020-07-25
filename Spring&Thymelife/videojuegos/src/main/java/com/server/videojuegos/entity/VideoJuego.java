@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class VideoJuego {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
     private String descripcion;
@@ -60,6 +60,6 @@ public class VideoJuego {
     //Sobreescribo toString para saber todos los atributos
     @Override
     public String toString() {
-        return "VideoJuego{" + "id=" + id + ", nombre='" + nombre +  ", descripcion='" + descripcion +  ", imagenUrl='" + imagenUrl +  ", distribuidor=" + distribuidor + '}';
+        return "VideoJuego{" + "id=" + id + ", nombre='" + nombre +  ", descripcion='" + descripcion +  ", imagenUrl='" + imagenUrl +  ", distribuidor=" + distribuidor.getId() + '}';
     }
 }

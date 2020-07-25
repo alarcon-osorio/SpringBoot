@@ -4,6 +4,7 @@ import com.server.videojuegos.entity.VideoJuego;
 import com.server.videojuegos.repository.VideoJuegoRepository;
 import org.springframework.stereotype.Service;
 
+import java.security.PublicKey;
 import java.util.List;
 
 @Service
@@ -25,5 +26,9 @@ public class VideoJuegoService {
 
     public List<VideoJuego> buscar(String consulta) {
         return videoJuegoRepository.findByNombreContaining(consulta);
+    }
+
+    public VideoJuego guardar(VideoJuego videoJuego){
+        return videoJuegoRepository.save(videoJuego);
     }
 }
