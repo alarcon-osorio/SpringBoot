@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface VideoJuegoRepository extends JpaRepository<VideoJuego, Integer> {
 
-    @Query("from VideoJuego order by v.nombre") //Personaliza consultas JPQL - El asume el Selec
+    @Query("from VideoJuego v order by v.nombre") //Personaliza consultas JPQL - El asume el Selec
     // Se puede usar SQL NATIVE
     //@Query(value = "select * from videojuego order by nombre, nativeQuery = true")
     List<VideoJuego> buscarTodos();
