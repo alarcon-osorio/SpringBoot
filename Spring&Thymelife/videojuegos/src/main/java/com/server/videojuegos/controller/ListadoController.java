@@ -39,4 +39,5 @@ public class ListadoController {
         model.addAttribute("videojuegos", juegos);
         return "listado";
     }
+
 }
