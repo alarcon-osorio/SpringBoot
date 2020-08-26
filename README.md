@@ -3,7 +3,7 @@
 _Projects_
 
 #
-_Errors:_ 
+_Errors:_  --
 
 Whitelabel Error Page
 This application has no explicit mapping for /error, so you are seeing this as a fallback.
