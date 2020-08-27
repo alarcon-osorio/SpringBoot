@@ -5,10 +5,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Role implements Serializable{
+public class Role implements Serializable{ //Implementa persistencia
 
     /**
-     *
+     * Esta entidad crea la tabla Roles en mysql
      */
     private static final long serialVersionUID = 6353963609310956029L;
 
@@ -17,13 +17,12 @@ public class Role implements Serializable{
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name="native",strategy="native")
     private Long id;
-
     @Column
     private String name;
-
     @Column
     private String description;
 
+    //Getters and Setters
     public Long getId() {
         return id;
     }
@@ -48,6 +47,7 @@ public class Role implements Serializable{
         this.description = description;
     }
 
+    //HashCode
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -85,6 +85,7 @@ public class Role implements Serializable{
         return true;
     }
 
+    //OverWrite methods
     @Override
     public String toString() {
         return "Role [id=" + id + ", name=" + name + ", description=" + description + "]";

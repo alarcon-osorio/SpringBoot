@@ -10,7 +10,7 @@ import java.util.Set;
 public class User implements Serializable{
 
     /**
-     *
+     * Esta entidad crea la tabla User en la bd application mysql
      */
     private static final long serialVersionUID = 1671417246199538663L;
 
@@ -18,7 +18,6 @@ public class User implements Serializable{
     @GeneratedValue(strategy=GenerationType.AUTO, generator="native")
     @GenericGenerator(name="native",strategy="native")
     private Long id;
-
     @Column
     private String firstName;
     @Column
@@ -29,8 +28,7 @@ public class User implements Serializable{
     private String username;
     @Column
     private String password;
-
-    @Transient
+    @Transient //Esta propiedad no va ser mapeada
     private String confirmPassword;
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -39,15 +37,18 @@ public class User implements Serializable{
             inverseJoinColumns=@JoinColumn(name="role_id"))
     private Set<Role> roles;
 
+    //Crear un Constructor
     public User() {
         super();
     }
 
+    //Psarle el ID
     public User(Long id) {
         super();
         this.id = id;
     }
 
+    //Getters and Setters
     public Long getId() {
         return id;
     }
