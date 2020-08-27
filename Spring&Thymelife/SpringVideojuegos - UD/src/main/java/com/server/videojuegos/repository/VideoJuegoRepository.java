@@ -19,4 +19,7 @@ public interface VideoJuegoRepository extends JpaRepository<VideoJuego, Integer>
     //@Query("from VideoJuego v where v.nombre like %?1%")  -> findByNombreContaining es lo mismo
     List<VideoJuego> findByNombreContaining(String consulta);
 
+    @Query("from VideoJuego v where v.id =?1")
+    List<VideoJuego> mostrarDetalle(int juegoId);
+
 }

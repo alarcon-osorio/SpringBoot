@@ -31,4 +31,9 @@ public class VideoJuegoService {
     public VideoJuego guardar(VideoJuego videoJuego){
         return videoJuegoRepository.save(videoJuego);
     }
+
+    public List<VideoJuego> detalle(int juegoId){
+        return videoJuegoRepository.mostrarDetalle(juegoId);
+    }
+
 }

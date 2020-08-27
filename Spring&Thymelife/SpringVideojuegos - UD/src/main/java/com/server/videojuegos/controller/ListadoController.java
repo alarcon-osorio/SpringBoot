@@ -40,4 +40,11 @@ public class ListadoController {
         return "listado";
     }
 
+    @RequestMapping("/detalleVideoJuego")
+    public String listarDetalleVideoJuego(int juegoId, Model model) {
+        List<VideoJuego> juegos = videoJuegoService.detalle(juegoId);
+        model.addAttribute("videojuegos", juegos);
+        return "detalleVideoJuego";
+    }
+
 }

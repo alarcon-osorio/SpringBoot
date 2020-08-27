@@ -27,6 +27,7 @@
     <div class="row">
         <div class="col col-md-12 text-right mb-4">
             <a th:href="@{/videojuegos/crear}" class="btn btn-outline-success">Crear</a>
+            <a th:href="@{/}" class="btn btn-outline-warning">Home</a>
         </div>
     </div>
     <div class="row">
@@ -41,7 +42,7 @@
                     <p th:text="${juego.descripcion}"class="card-text"></p>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="#" class="btn btn-primary">Ver Detalles</a>
+                    <a th:href="@{/detalleVideoJuego(juegoId=${juego.id})}" class="btn btn-primary">Ver Detalles</a>
                 </div>
             </div>
         </div>
