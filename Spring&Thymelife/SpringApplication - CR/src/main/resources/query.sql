@@ -1,3 +1,7 @@
+CREATE DATABASE application;
+
+//Las entidades crean las tablas
+
 INSERT INTO `user` (`email`, `first_name`, `last_name`, `password`, `username`) VALUES ('admin@admin.com', 'admin', 'admin', '$2a$04$n6WIRDQlIByVFi.5rtQwEOTAzpzLPzIIG/O6quaxRKY2LlIHG8uty', 'admin');
 
 
