@@ -16,6 +16,8 @@ import javax.persistence.Transient;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.JoinColumn;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class User implements Serializable{
@@ -31,14 +33,24 @@ public class User implements Serializable{
     private Long id;
 
     @Column
+    @NotBlank
     private String firstName;
+
     @Column
+    @NotBlank
     private String lastName;
+
     @Column
+    @Email
+    @NotBlank
     private String email;
-    @Column
+
+    @Column(unique = true)
+    @NotBlank
     private String username;
+
     @Column
+    @NotBlank
     private String password;
 
     @Transient //Esta propiedad no va ser mapeada
