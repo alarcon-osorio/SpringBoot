@@ -6,10 +6,10 @@ import com.server.videojuegos.service.VideoJuegoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class CrudController {
@@ -35,5 +35,19 @@ public class CrudController {
         System.out.println(videoJuego);
         return "redirect:/";
     }
+
+    /*
+    //@PutMapping("/videojuegos/editar/{id}")
+    @RequestMapping(value = "/videojuegos/editar/{id}", produces = "application/json", method=RequestMethod.PUT)
+    public List<VideoJuego> update(@RequestBody VideoJuego videoJuego, @PathVariable Integer juegoId) {
+        VideoJuego videoJuegoActual = (VideoJuego) videoJuegoService.editar(juegoId);
+        videoJuegoActual.setNombre(videoJuego.getNombre());
+        videoJuegoActual.setDescripcion(videoJuego.getDescripcion());
+        videoJuegoActual.setImagenUrl(videoJuego.getImagenUrl());
+        videoJuegoActual.setDistribuidor(videoJuego.getDistribuidor());
+
+        return (List<VideoJuego>) videoJuegoService.guardar(videoJuegoActual);
+    }
+    */
 
 }

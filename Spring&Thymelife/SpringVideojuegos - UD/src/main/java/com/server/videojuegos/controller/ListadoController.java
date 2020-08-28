@@ -47,4 +47,11 @@ public class ListadoController {
         return "detalleVideoJuego";
     }
 
+    @RequestMapping("/editarVideoJuego")
+    public String editarVideoJuego(int juegoId, Model model) {
+        List<VideoJuego> juegos = videoJuegoService.editar(juegoId);
+        model.addAttribute("videojuegos", juegos);
+        return "editarVideoJuego";
+    }
+
 }

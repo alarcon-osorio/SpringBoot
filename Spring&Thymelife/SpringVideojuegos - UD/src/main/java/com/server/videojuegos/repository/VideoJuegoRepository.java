@@ -22,4 +22,7 @@ public interface VideoJuegoRepository extends JpaRepository<VideoJuego, Integer>
     @Query("from VideoJuego v where v.id =?1")
     List<VideoJuego> mostrarDetalle(int juegoId);
 
+    @Query("from VideoJuego v where v.id =?1")
+    List<VideoJuego> editar(int juegoId);
+
 }

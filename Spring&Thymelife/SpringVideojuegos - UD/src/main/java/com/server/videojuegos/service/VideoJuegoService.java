@@ -36,4 +36,8 @@ public class VideoJuegoService {
         return videoJuegoRepository.mostrarDetalle(juegoId);
     }
 
+    public List<VideoJuego> editar(int juegoId){
+        return videoJuegoRepository.editar(juegoId);
+    }
+
 }
