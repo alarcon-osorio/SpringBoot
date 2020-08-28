@@ -1,8 +1,14 @@
 package com.application.entity;
 
-import org.hibernate.annotations.GenericGenerator;
-import javax.persistence.*;
 import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Role implements Serializable{ //Implementa persistencia
@@ -10,7 +16,7 @@ public class Role implements Serializable{ //Implementa persistencia
     /**
      * Esta entidad crea la tabla Roles en mysql
      */
-    private static final long serialVersionUID = 6353963609310956029L;
+    private static final long serialVersionUID = -2969524610059270447L;
 
 
     @Id
@@ -58,6 +64,7 @@ public class Role implements Serializable{ //Implementa persistencia
         return result;
     }
 
+    //Equals
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -85,7 +92,7 @@ public class Role implements Serializable{ //Implementa persistencia
         return true;
     }
 
-    //OverWrite methods
+    //ToString Functions
     @Override
     public String toString() {
         return "Role [id=" + id + ", name=" + name + ", description=" + description + "]";

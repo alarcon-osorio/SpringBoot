@@ -1,10 +1,21 @@
 package com.application.entity;
 
 
-import org.hibernate.annotations.GenericGenerator;
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Transient;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.JoinColumn;
 
 @Entity
 public class User implements Serializable{
@@ -12,12 +23,13 @@ public class User implements Serializable{
     /**
      * Esta entidad crea la tabla User en la bd application mysql
      */
-    private static final long serialVersionUID = 1671417246199538663L;
+    private static final long serialVersionUID = -6833167247955613395L;
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO, generator="native")
     @GenericGenerator(name="native",strategy="native")
     private Long id;
+
     @Column
     private String firstName;
     @Column
@@ -28,6 +40,7 @@ public class User implements Serializable{
     private String username;
     @Column
     private String password;
+
     @Transient //Esta propiedad no va ser mapeada
     private String confirmPassword;
 
@@ -35,16 +48,13 @@ public class User implements Serializable{
     @JoinTable(name = "user_roles",
             joinColumns=@JoinColumn(name="user_id"),
             inverseJoinColumns=@JoinColumn(name="role_id"))
-    private Set<Role> roles;
+    private Set roles;
 
     //Crear un Constructor
-    public User() {
-        super();
-    }
+    public User() { }
 
-    //Psarle el ID
+    //pasar el id
     public User(Long id) {
-        super();
         this.id = id;
     }
 
@@ -105,21 +115,15 @@ public class User implements Serializable{
         this.confirmPassword = confirmPassword;
     }
 
-    public Set<Role> getRoles() {
+    public Set getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(Set roles) {
         this.roles = roles;
     }
 
-    @Override
-    public String toString() {
-        return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-                + ", username=" + username + ", password=" + password + ", confirmPassword=" + confirmPassword
-                + ", roles=" + roles + "]";
-    }
-
+    //HashCode
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -135,6 +139,7 @@ public class User implements Serializable{
         return result;
     }
 
+    //Equals
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -185,6 +190,14 @@ public class User implements Serializable{
         } else if (!username.equals(other.username))
             return false;
         return true;
+    }
+
+    //ToString
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+                + ", username=" + username + ", password=" + password + ", confirmPassword=" + confirmPassword
+                + ", roles=" + roles + "]";
     }
 
 }
