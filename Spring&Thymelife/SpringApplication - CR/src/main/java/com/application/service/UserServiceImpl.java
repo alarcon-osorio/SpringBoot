@@ -12,7 +12,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
-    @Override
     public Iterable<User> getAllUsers() {
         return userRepository.findAll();
     }
