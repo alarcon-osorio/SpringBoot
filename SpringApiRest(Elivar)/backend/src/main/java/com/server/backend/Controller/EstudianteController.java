@@ -60,4 +60,9 @@ public class EstudianteController {
     public void actualizarEstudiante(@RequestBody Estudiante estudiante) {
         estudianteService.actualizar(estudiante);
     }
+
+    @DeleteMapping("api/estudiante/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {
+        estudianteService.eliminar(id);
+    }
 }

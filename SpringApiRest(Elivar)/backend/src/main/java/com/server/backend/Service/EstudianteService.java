@@ -28,4 +28,8 @@ public class EstudianteService {
     public Estudiante actualizar(Estudiante estudiante){ //Hacerlo por medio de objeto, cuando la encentra actualiza y cuando no la crea
         return estudianteRepository.save(estudiante);
     }
+
+    public void eliminar(Integer id) {
+        estudianteRepository.deleteById(id);
+    }
 }
