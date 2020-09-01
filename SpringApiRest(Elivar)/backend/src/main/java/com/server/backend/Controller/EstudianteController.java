@@ -55,4 +55,9 @@ public class EstudianteController {
     public Estudiante obtenerEstudiante(@PathVariable("id") Integer id) {
         return estudianteService.obtenerPorId(id);
     }
+
+    @PutMapping("api/estudiante/{id}")
+    public void actualizarEstudiante(@RequestBody Estudiante estudiante) {
+        estudianteService.actualizar(estudiante);
+    }
 }

@@ -24,4 +24,8 @@ public class EstudianteService {
     public Estudiante obtenerPorId(Integer id){
         return estudianteRepository.getOne(id); //No usamos el findById por qu tendriamos que hacer get para obtenerlo
     }
+
+    public Estudiante actualizar(Estudiante estudiante){ //Hacerlo por medio de objeto, cuando la encentra actualiza y cuando no la crea
+        return estudianteRepository.save(estudiante);
+    }
 }
