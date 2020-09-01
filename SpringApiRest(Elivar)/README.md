@@ -23,6 +23,7 @@ J> ava 8 u 11
 IntelliJ IDEA
 1. Importar project
 2. Importar Script descargar dependencias
+3. Cerrar Issue
 Eclipse
 1. Descargar Spring Tools 
 1. Inciar proyecto con Maven - Project
