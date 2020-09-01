@@ -5,6 +5,8 @@ import com.server.backend.Repository.EstudianteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EstudianteService {
 
@@ -13,5 +15,9 @@ public class EstudianteService {
 
     public void guardar(Estudiante estudiante){
         estudianteRepository.save(estudiante);
+    }
+
+    public List<Estudiante> obtenerTodos(){
+        return estudianteRepository.findAll();
     }
 }

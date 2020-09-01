@@ -49,4 +49,9 @@ public class EstudianteController {
         return estudiante;
     }
 
+    @GetMapping("api/estudiantes")
+    public List<Estudiante> obtener() {
+       return estudianteService.obtenerTodos();
+    }
+
 }
