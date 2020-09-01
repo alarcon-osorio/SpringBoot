@@ -20,4 +20,8 @@ public class EstudianteService {
     public List<Estudiante> obtenerTodos(){
         return estudianteRepository.findAll();
     }
+
+    public Estudiante obtenerPorId(Integer id){
+        return estudianteRepository.getOne(id); //No usamos el findById por qu tendriamos que hacer get para obtenerlo
+    }
 }
