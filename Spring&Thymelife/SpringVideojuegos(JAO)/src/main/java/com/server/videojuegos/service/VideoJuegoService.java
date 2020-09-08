@@ -2,19 +2,16 @@ package com.server.videojuegos.service;
 
 import com.server.videojuegos.entity.VideoJuego;
 import com.server.videojuegos.repository.VideoJuegoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.security.PublicKey;
 import java.util.List;
 
 @Service
 public class VideoJuegoService {
 
-    private final VideoJuegoRepository videoJuegoRepository;
-
-    public VideoJuegoService(VideoJuegoRepository videoJuegoRepository) {
-        this.videoJuegoRepository = videoJuegoRepository;
-    }
+    @Autowired
+    private VideoJuegoRepository videoJuegoRepository;
 
     public List<VideoJuego> buscarDestacados() {
         return videoJuegoRepository.buscarTodos();
@@ -38,6 +35,16 @@ public class VideoJuegoService {
 
     public List<VideoJuego> editar(int juegoId){
         return videoJuegoRepository.editar(juegoId);
+    }
+
+    public VideoJuego actualizar(VideoJuego videoJuego){
+        VideoJuego videoJuego1 = new VideoJuego();
+        videoJuego1.setId(videoJuego1.getId());
+        videoJuego1.setNombre(videoJuego1.getNombre());
+        videoJuego1.setDescripcion(videoJuego1.getDescripcion());
+        videoJuego1.setImagenUrl(videoJuego1.getImagenUrl());
+        videoJuego1.setDistribuidor(videoJuego1.getDistribuidor());
+        return videoJuegoRepository.save(videoJuego1);
     }
 
 }

@@ -12,6 +12,8 @@ public class Estudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    private Integer documento;
     private String nombres;
     private String apellidos;
     private Double nota;
@@ -26,6 +28,14 @@ public class Estudiante {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(Integer documento) {
+        this.documento = documento;
     }
 
     public String getNombres() {
@@ -64,6 +74,7 @@ public class Estudiante {
     public String toString() {
         return "Estudiante{" +
                 "id=" + id +
+                ", documento=" + documento +
                 ", nombres='" + nombres + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", nota=" + nota +
