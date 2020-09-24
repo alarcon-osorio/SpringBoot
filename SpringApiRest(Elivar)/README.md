@@ -4,16 +4,24 @@ Pre - requisitos
 
 1. Spring.io -->Generar proyecto
 > Maven Project
+>
 > Java
+>
 > Group
+>
 > Artifact
+>
 > JAR
-J> ava 8 u 11
+>
+> Java 8 u 11
 
 2. Dependencies
 > Spring Web -- Servicios
+>
 > JPA -- Persistencia de datos
+>
 > MySQL -- DataBase
+>
 > Developer Tools -- Cambios en caliente
 
 3. Base de datos MYSQL

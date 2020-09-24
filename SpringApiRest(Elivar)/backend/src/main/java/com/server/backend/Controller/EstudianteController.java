@@ -15,16 +15,16 @@ public class EstudianteController {
     @Autowired
     private EstudianteService estudianteService;
 
+    @GetMapping("api/estudiantes")
+    public List<Estudiante> obtener() {
+       return estudianteService.obtenerTodos();
+    }
+
     @PostMapping("api/estudiante")
     public Estudiante guardarEstudiante(@RequestBody Estudiante estudiante) {
         System.out.println(estudiante);
         estudianteService.guardar(estudiante);
         return estudiante;
-    }
-
-    @GetMapping("api/estudiantes")
-    public List<Estudiante> obtener() {
-       return estudianteService.obtenerTodos();
     }
 
     @GetMapping("api/estudiante/{id}")
