@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Plantilla</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<header th:fragment="header">
+    <h1>[[#{plantilla.titulo}]]</h1>
+</header>
+
+<footer th:fragment="footer">
+    <div>
+        <a th:href="@{/(lang=es)}">ES</a>
+        ||
+        <a th:href="@{/(lang=en)}">EN</a>
+    </div>
+    <span> [[#{plantilla.pie-pagina}]] <a>EngineerSystems</a></span>
+</footer>
+
+</body>
+</html>
